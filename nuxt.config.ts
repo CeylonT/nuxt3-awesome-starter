@@ -18,6 +18,14 @@ export default defineNuxtConfig({
   // plugins
   plugins: ['~/plugins/navbar.ts'],
 
+  // postcss
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
+
   // build
   build: {
     transpile: ['@headlessui/vue'],
@@ -30,7 +38,6 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxt/content',
     '@vueuse/nuxt',
-    'nuxt-windicss',
   ],
 
   // experimental features
@@ -75,20 +82,6 @@ export default defineNuxtConfig({
   // vueuse
   vueuse: {
     ssrHandlers: true,
-  },
-
-  // windicss
-  windicss: {
-    analyze: {
-      analysis: {
-        interpretUtilities: false,
-      },
-      server: {
-        port: 4000,
-        open: false,
-      },
-    },
-    scan: true,
   },
 
   // content
