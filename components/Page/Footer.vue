@@ -5,25 +5,28 @@ const app = useAppConfig() as AppConfigInput
 </script>
 
 <template>
-  <footer class="border-t lg:border-gray-900/10 dark:border-gray-50/[0.2]">
+  <footer
+    class="tw-border-t tw-lg:border-gray-900/10 dark:tw-border-gray-50/[0.2]"
+  >
     <section
-      class="max-w-8xl mx-auto px-4 lg:px-8 flex-1 flex w-full space-x-20"
+      class="tw-max-w-8xl tw-mx-auto tw-px-4 tw-lg:px-8 tw-flex-1 tw-flex tw-w-full tw-space-x-20"
     >
-      <div class="w-full py-4 text-center md:text-left">
-        <div class="mb-1">
+      <div class="tw-w-full tw-py-4 tw-text-center tw-md:text-left">
+        <div class="tw-mb-1">
           {{ app.name }}
         </div>
-        <div class="text-xs text-gray-600 dark:text-gray-400">
+        <div class="tw-text-xs tw-text-gray-600 dark:tw-text-gray-400">
           Copyright © 2022 <a :href="app.author.link">{{ app.author.name }}</a
-          >. All rights reserved. Made with <span class="text-red-500">❤</span>
+          >. All rights reserved. Made with
+          <span class="tw-text-red-500">❤</span>
           <div
-            class="flex flex-col md:flex-row space-x-2 items-center md:float-right"
+            class="tw-flex tw-flex-col tw-md:flex-row tw-space-x-2 tw-items-center tw-md:float-right"
           >
-            <span class="text-center md:text-right">
+            <span class="tw-text-center tw-md:text-right">
               design by <a href="https://github.com/viandwi24">viandwi24</a>
             </span>
             <span
-              class="block bg-blue-500 rounded px-1 py-0.5 text-white text-xs"
+              class="tw-block tw-bg-blue-500 tw-rounded tw-px-1 tw-py-0.5 tw-text-white tw-text-xs"
             >
               {{ p.devDependencies.nuxt }}
             </span>

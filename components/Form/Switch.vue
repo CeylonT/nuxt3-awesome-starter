@@ -44,22 +44,22 @@ onMounted(() => {
 </script>
 
 <template>
-  <label :for="id" class="flex cursor-pointer">
+  <label :for="id" class="tw-flex tw-cursor-pointer">
     <label
       :for="id"
-      class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in"
+      class="tw-relative tw-inline-block tw-w-10 tw-mr-2 tw-align-middle tw-select-none tw-transition tw-duration-200 tw-ease-in"
     >
       <input
         :id="id"
         ref="input"
         type="checkbox"
-        class="switch-checkbox absolute block w-6 h-6 rounded-full bg-white dark:bg-slate-900 border-2 border-slate-300 dark:border-slate-600 appearance-none cursor-pointer"
+        class="tw-switch-checkbox tw-absolute tw-block tw-w-6 tw-h-6 tw-rounded-full tw-bg-white dark:tw-bg-slate-900 tw-border-2 tw-border-slate-300 dark:tw-border-slate-600 tw-appearance-none tw-cursor-pointer"
         :checked="checked"
         @change="onInputChange"
       />
       <label
         :for="id"
-        class="switch-label block overflow-hidden h-6 rounded-full bg-gray-200 dark:bg-slate-700 cursor-pointer border border-slate-300 dark:border-slate-500"
+        class="tw-switch-label tw-block tw-overflow-hidden tw-h-6 tw-rounded-full tw-bg-gray-200 dark:tw-bg-slate-700 tw-cursor-pointer tw-border tw-border-slate-300 dark:tw-border-slate-500"
       />
     </label>
     <slot />
@@ -67,10 +67,10 @@ onMounted(() => {
 </template>
 
 <style>
-.switch-checkbox:checked {
+.tw-switch-checkbox:checked {
   right: 0;
 }
-.switch-checkbox:checked + .switch-label {
-  @apply bg-primary-500;
+.tw-switch-checkbox:checked + .tw-switch-label {
+  @apply tw-bg-primary-500;
 }
 </style>

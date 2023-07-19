@@ -24,24 +24,24 @@ const styles = reactive<{
 }>({
   primary: '',
   success:
-    'dark:from-green-500/50 via-gray-200 to-gray-200 dark:via-slate-800 dark:to-slate-800',
+    'dark:tw-from-green-500/50 tw-via-gray-200 tw-to-gray-200 dark:tw-via-slate-800 dark:tw-to-slate-800',
   warning:
-    'dark:from-yellow-500/50 via-gray-200 to-gray-200 dark:via-slate-800 dark:to-slate-800',
+    'dark:tw-from-yellow-500/50 tw-via-gray-200 tw-to-gray-200 dark:tw-via-slate-800 dark:tw-to-slate-800',
   danger:
-    'dark:from-red-500/50 via-gray-200 to-gray-200 dark:via-slate-800 dark:to-slate-800',
+    'dark:tw-from-red-500/50 tw-via-gray-200 tw-to-gray-200 dark:tw-via-slate-800 dark:tw-to-slate-800',
 })
 const textStyles = reactive<{
   [key: string]: string
 }>({
-  primary: 'text-black dark:text-white',
-  success: 'text-green-500',
-  warning: 'text-orange-500',
-  danger: 'text-red-500',
+  primary: 'tw-text-black dark:tw-text-white',
+  success: 'tw-text-green-500',
+  warning: 'tw-text-orange-500',
+  danger: 'tw-text-red-500',
 })
 
 // selected
 const isDestroyed = ref<Boolean>(false)
-const selectedType = computed<IStyles>((): IStyles => {
+const selectedType = computed<IStyles>(() => {
   if (['primary', 'success', 'warning', 'danger'].includes(props.type))
     return props.type as IStyles
   return 'primary'
@@ -59,43 +59,45 @@ const close = () => {
   <TransitionRoot :show="!isDestroyed" appear>
     <TransitionChild
       as="template"
-      enter="duration-300 ease-out"
-      enter-from="opacity-0"
-      enter-to="opacity-100"
-      leave="duration-300 ease-in"
-      leave-from="opacity-100"
-      leave-to="opacity-0"
+      enter="tw-duration-300 tw-ease-out"
+      enter-from="tw-opacity-0"
+      enter-to="tw-opacity-100"
+      leave="tw-duration-300 tw-ease-in"
+      leave-from="tw-opacity-100"
+      leave-to="tw-opacity-0"
     >
       <div
-        :class="`bg-gray-200 dark:bg-slate-800 bg-gradient-to-r shadow-white/50 dark:shadow-slate-900/50 px-6 py-6 rounded-md shadow-lg flex space-x-6 ${selectedStyle}`"
+        :class="`tw-bg-gray-200 dark:tw-bg-slate-800 tw-bg-gradient-to-r tw-shadow-white/50 dark:tw-shadow-slate-900/50 tw-px-6 tw-py-6 tw-rounded-md tw-shadow-lg tw-flex tw-space-x-6 ${selectedStyle}`"
       >
-        <div class="flex items-center justify-center">
+        <div class="tw-flex tw-items-center tw-justify-center">
           <slot name="icon">
             <IconMdi:checkCircle
               v-if="selectedType === 'success'"
-              :class="`text-2xl ${selectedTextStyle}`"
+              :class="`tw-text-2xl ${selectedTextStyle}`"
             />
             <icon-clarity:times-circle-solid
               v-if="selectedType === 'danger'"
-              :class="`text-2xl ${selectedTextStyle}`"
+              :class="`tw-text-2xl ${selectedTextStyle}`"
             />
             <icon-bi:exclamation-circle-fill
               v-if="selectedType === 'warning'"
-              :class="`text-2xl ${selectedTextStyle}`"
+              :class="`tw-text-2xl ${selectedTextStyle}`"
             />
           </slot>
         </div>
-        <div class="flex-1">
-          <div :class="`font-bold text-lg mb-0.5 ${selectedTextStyle}`">
+        <div class="tw-flex-1">
+          <div
+            :class="`tw-font-bold tw-text-lg tw-mb-0.5 ${selectedTextStyle}`"
+          >
             <slot name="title">{{ props.title }}</slot>
           </div>
-          <div class="text-gray-700 dark:text-gray-100">
+          <div class="tw-text-gray-700 dark:tw-text-gray-100">
             <slot name="title">{{ props.text }}</slot>
           </div>
         </div>
         <div>
           <button
-            class="text-slate-600 hover:text-red-500 dark:text-gray-400 font-bold"
+            class="tw-text-slate-600 tw-hover:text-red-500 dark:tw-text-gray-400 tw-font-bold"
             @click="close"
           >
             <icon-clarity:times-line />

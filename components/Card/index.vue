@@ -9,11 +9,11 @@ defineProps({
 
 <template>
   <div
-    class="card duration-300 transition-colors w-full relative rounded overflow-hidden bg-white dark:bg-slate-900 border border-gray-900/10 dark:border-gray-50/[0.2]"
+    class="tw-card tw-duration-300 tw-transition-colors tw-w-full tw-relative tw-rounded tw-overflow-hidden tw-bg-white dark:tw-bg-slate-900 tw-border tw-border-gray-900/10 dark:tw-border-gray-50/[0.2]"
   >
     <div
       v-if="disabled"
-      class="absolute z-10 top-0 left-0 w-full h-full bg-slate-800/[0.75] cursor-not-allowed"
+      class="tw-absolute tw-z-10 tw-top-0 tw-left-0 tw-w-full tw-h-full tw-bg-slate-800/[0.75] tw-cursor-not-allowed"
     />
     <slot />
   </div>

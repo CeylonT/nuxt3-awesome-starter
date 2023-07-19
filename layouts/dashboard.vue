@@ -2,7 +2,7 @@
   <div>
     <slot name="app-before" />
     <div id="app-before"></div>
-    <div class="flex flex-col min-h-screen">
+    <div class="tw-flex tw-flex-col tw-min-h-screen">
       <slot name="header">
         <DashboardNavbar>
           <template #drawer>
@@ -10,14 +10,14 @@
           </template>
         </DashboardNavbar>
       </slot>
-      <div class="flex-1 w-full flex flex-col">
+      <div class="tw-flex-1 tw-w-full tw-flex tw-flex-col">
         <div
-          class="relative flex-1 flex flex-row mx-auto max-w-8xl w-full h-full"
+          class="tw-relative tw-flex-1 tw-flex tw-flex-row tw-mx-auto tw-max-w-8xl tw-w-full tw-h-full"
         >
-          <div class="lg:pl-8 py-4">
+          <div class="tw-lg:pl-8 tw-py-4">
             <DashboardSidebar />
           </div>
-          <div class="flex flex-col lg:ml-60 xl:ml-80">
+          <div class="tw-flex tw-flex-col tw-lg:ml-60 tw-xl:ml-80">
             <slot />
             <slot name="footer">
               <PageFooter />

@@ -32,38 +32,39 @@ const menus = computed((): IMenuItem[] => [
   <BuilderNavbar>
     <template #banner>
       <div
-        class="text-white text-xs text-center py-1 px-4 lg:px-8 bg-primary-500 capitalize"
+        class="tw-text-white tw-text-xs tw-text-center tw-py-1 tw-px-4 lg:px-8 tw-bg-primary-500 tw-capitalize"
       >
-        <span class="mr-1">
+        <span class="tw-mr-1">
           {{ $t('banners.welcome', { app_name: app.name }) }}
           <Anchor
-            class="underline font-bold"
+            class="tw-underline tw-font-bold"
             :text="$t('others.learn_more')"
             href="https://github.com/viandwi24/nuxt3-awesome-starter"
           />
         </span>
       </div>
     </template>
+
     <template #menu>
-      <div class="relative hidden lg:flex items-center ml-auto">
+      <div class="tw-relative tw-hidden lg:tw-flex tw-items-center tw-ml-auto">
         <nav
-          class="text-sm leading-6 font-semibold text-gray-600 dark:text-gray-300"
+          class="tw-text-sm tw-leading-6 tw-font-semibold tw-text-gray-600 dark:tw-text-gray-300"
           role="navigation"
         >
-          <ul class="flex items-center space-x-8">
+          <ul class="tw-flex tw-items-center tw-space-x-8">
             <li v-for="(item, i) in menus" :key="i">
               <Anchor
                 v-if="item.type === 'link'"
                 :to="item.route ? item.route : undefined"
                 :href="item.href ? item.href : undefined"
-                class="hover:no-underline hover:text-slate-900 hover:dark:text-white capitalize"
+                class="tw-hover:no-underline tw-hover:text-slate-900 tw-hover:dark:text-white tw-capitalize"
                 >{{ item.text }}</Anchor
               >
               <Button
                 v-else-if="item.type === 'button'"
                 :text="item.text"
                 size="xs"
-                class="font-extrabold capitalize"
+                class="tw-font-extrabold tw-capitalize"
                 :to="item.route ? item.route : undefined"
                 :href="item.href ? item.href : undefined"
               />
@@ -71,12 +72,12 @@ const menus = computed((): IMenuItem[] => [
           </ul>
         </nav>
         <div
-          class="flex space-x-4 border-l ml-6 pl-6 border-gray-900/10 dark:border-gray-50/[0.2]"
+          class="tw-flex tw-space-x-4 tw-border-l tw-ml-6 tw-pl-6 tw-border-gray-900/10 dark:tw-border-gray-50/[0.2]"
         >
           <LanguageSwitcher />
           <ThemeSwitcher />
           <Anchor
-            class="hover:no-underline hover:text-slate-900 hover:dark:text-white text-lg flex self-center items-center"
+            class="tw-hover:no-underline tw-hover:text-slate-900 tw-hover:dark:text-white tw-text-lg tw-flex tw-self-center tw-items-center"
             href="https://github.com/viandwi24/nuxt3-awesome-starter"
             title="Github"
           >
@@ -89,14 +90,16 @@ const menus = computed((): IMenuItem[] => [
       <ActionSheet @on-close="toggleOptions(false)">
         <ActionSheetBody>
           <ActionSheetHeader text="Menu" />
-          <nav class="leading-6 font-semibold text-gray-600 dark:text-gray-300">
-            <ul class="flex flex-col">
+          <nav
+            class="tw-leading-6 tw-font-semibold tw-text-gray-600 dark:tw-text-gray-300"
+          >
+            <ul class="tw-flex tw-flex-col">
               <li
                 v-for="(item, i) in menus"
                 :key="i"
-                class="flex w-full"
+                class="tw-flex tw-w-full"
                 :class="{
-                  'pb-2 mb-2 border-b border-gray-900/10 dark:border-gray-50/[0.2]':
+                  'tw-pb-2 tw-mb-2 tw-border-b tw-border-gray-900/10 dark:tw-border-gray-50/[0.2]':
                     item.type === 'link',
                 }"
               >
@@ -104,30 +107,30 @@ const menus = computed((): IMenuItem[] => [
                   v-if="item.type === 'link'"
                   :to="item.route ? item.route : undefined"
                   :href="item.href ? item.href : undefined"
-                  class="flex-1 hover:no-underline capitalize"
+                  class="tw-flex-1 tw-hover:no-underline tw-capitalize"
                   >{{ item.text }}</Anchor
                 >
                 <Button
                   v-else-if="item.type === 'button'"
                   :text="item.text"
                   size="xs"
-                  class="flex-1 font-extrabold capitalize"
+                  class="tw-flex-1 tw-font-extrabold tw-capitalize"
                   :to="item.route ? item.route : undefined"
                   :href="item.href ? item.href : undefined"
                 />
               </li>
             </ul>
           </nav>
-          <div class="mt-6 text-sm font-bold capitalize">
+          <div class="tw-mt-6 tw-text-sm tw-font-bold tw-capitalize">
             {{ $t('components.theme_switcher.change_theme') }}
           </div>
-          <div class="mt-2">
+          <div class="tw-mt-2">
             <ThemeSwitcher type="select-box" />
           </div>
-          <div class="mt-6 text-sm font-bold capitalize">
+          <div class="tw-mt-6 tw-text-sm tw-font-bold tw-capitalize">
             {{ $t('components.language_switcher.change_language') }}
           </div>
-          <div class="mt-2">
+          <div class="tw-mt-2">
             <LanguageSwitcher type="select-box" />
           </div>
         </ActionSheetBody>
@@ -137,7 +140,7 @@ const menus = computed((): IMenuItem[] => [
           href="https://github.com/viandwi24/nuxt3-awesome-starter"
         >
           <IconMdi:github-face />
-          <span class="ml-1">Github</span>
+          <span class="tw-ml-1">Github</span>
         </Button>
         <Button
           text="Close"

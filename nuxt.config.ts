@@ -13,7 +13,11 @@ export default defineNuxtConfig({
   },
 
   // css
-  css: ['~/assets/sass/vendor.scss', '~/assets/sass/app.scss'],
+  css: [
+    '~/assets/sass/vendor.scss',
+    '~/assets/sass/app.scss',
+    'vuetify/lib/styles/main.sass',
+  ],
 
   // plugins
   plugins: ['~/plugins/navbar.ts'],
@@ -28,7 +32,7 @@ export default defineNuxtConfig({
 
   // build
   build: {
-    transpile: ['@headlessui/vue'],
+    transpile: ['vuetify', '@headlessui/vue'],
   },
 
   // modules

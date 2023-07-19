@@ -47,30 +47,29 @@ const toggleOptions = (show?: boolean) => {
   }
 }
 </script>
-
 <template>
   <div
     ref="navbar"
-    class="backdrop-filter backdrop-blur-md top-0 z-40 w-full flex-none transition-colors duration-300 lg:z-50 border-b border-gray-900/10 dark:border-gray-50/[0.2] bg-white/[0.5] dark:bg-slate-900/[0.5]"
+    class="tw-backdrop-filter tw-backdrop-blur-md tw-top-0 tw-z-40 tw-w-full tw-flex-none tw-transition-colors tw-duration-300 tw-lg:z-50 tw-border-b tw-border-gray-900/10 dark:tw-border-gray-50/[0.2] tw-bg-white/[0.5] dark:tw-bg-slate-900/[0.5]"
   >
     <div id="navbar-banner" class="banner">
       <slot name="banner" />
     </div>
-    <div class="max-w-8xl w-full mx-auto">
-      <div class="py-3 lg:px-8 mx-4 lg:mx-0">
-        <div class="relative flex items-center">
+    <div class="tw-max-w-8xl tw-w-full tw-mx-auto">
+      <div class="tw-py-3 tw-lg:px-8 tw-mx-4 tw-lg:mx-0">
+        <div class="tw-relative tw-flex tw-items-center">
           <!-- drawer:toggle -->
           <div
             v-if="$slots['drawer']"
-            class="lg:hidden flex items-center self-center justify-center mr-2"
+            class="tw-lg:hidden tw-flex tw-items-center tw-self-center tw-justify-center tw-mr-2"
           >
             <button
-              class="flex items-center focus:outline-none"
+              class="tw-flex tw-items-center tw-focus:tw-outline-none"
               aria-label="Toggle Drawer Menu"
               @click="toggleDrawer()"
             >
               <span
-                class="flex items-center text-gray-600 dark:text-gray-300 text-lg"
+                class="tw-flex tw-items-center tw-text-gray-600 dark:tw-text-gray-300 tw-text-lg"
                 aria-hidden="true"
               >
                 <IconUil:bars v-if="!showDrawer" />
@@ -82,13 +81,13 @@ const toggleOptions = (show?: boolean) => {
           <slot name="title">
             <NuxtLink
               tag="a"
-              class="mr-3 flex-none overflow-hidden md:w-auto text-md font-bold text-gray-900 dark:text-gray-200"
+              class="tw-mr-3 tw-flex-none tw-overflow-hidden tw-md:w-auto tw-text-md tw-font-bold tw-text-gray-900 dark:tw-text-gray-200"
               :to="{ name: 'index' }"
             >
-              <span class="sr-only">home</span>
-              <span class="flex items-center">
+              <span class="tw-sr-only">home</span>
+              <span class="tw-flex tw-items-center">
                 <IconSimpleIcons:nuxtdotjs
-                  class="inline-block mr-2 text-lg text-primary-500"
+                  class="tw-inline-block tw-mr-2 tw-text-lg tw-text-primary-500"
                 />
                 {{ app.name }}
               </span>
@@ -99,15 +98,15 @@ const toggleOptions = (show?: boolean) => {
           <!-- options:toggle -->
           <div
             v-if="$slots['options']"
-            class="flex-1 flex justify-end lg:hidden"
+            class="tw-flex-1 tw-flex tw-justify-end tw-lg:hidden"
           >
             <button
-              class="flex items-center focus:outline-none"
+              class="tw-flex tw-items-center tw-focus:tw-outline-none"
               aria-label="Toggle Options Menu"
               @click="toggleOptions()"
             >
               <span
-                class="flex items-center text-gray-600 dark:text-gray-300 text-sm"
+                class="tw-flex tw-items-center tw-text-gray-600 dark:tw-text-gray-300 tw-text-sm"
                 aria-hidden="true"
               >
                 <icon-fa-solid:ellipsis-v />
@@ -120,12 +119,14 @@ const toggleOptions = (show?: boolean) => {
     <ClientOnly>
       <Teleport to="#app-after">
         <!-- drawer -->
-        <Transition name="slide-fade-from-up" mode="out-in">
+        <Transition name="tw-slide-fade-from-up" mode="out-in">
           <div
             v-if="showDrawer && $slots['drawer']"
-            class="fixed lg:hidden bg-gray-100 dark:bg-slate-800 pt-12 top-0 left-0 w-screen h-screen z-30 flex flex-col"
+            class="tw-fixed tw-lg:hidden tw-bg-gray-100 dark:tw-bg-slate-800 tw-pt-12 tw-top-0 tw-left-0 tw-w-screen tw-h-screen tw-z-30 tw-flex tw-flex-col"
           >
-            <div class="flex-1 flex flex-col relative overflow-y-auto">
+            <div
+              class="tw-flex-1 tw-flex tw-flex-col tw-relative tw-overflow-y-auto"
+            >
               <slot name="drawer" :toggle-drawer="toggleDrawer" />
             </div>
           </div>
@@ -145,14 +146,14 @@ const toggleOptions = (show?: boolean) => {
 </template>
 
 <style lang="scss">
-.slide-fade-from-up-enter-active {
+.tw-slide-fade-from-up-enter-active {
   transition: all 0.3s ease-out;
 }
-.slide-fade-from-up-leave-active {
+.tw-slide-fade-from-up-leave-active {
   transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
 }
-.slide-fade-from-up-enter-from,
-.slide-fade-from-up-leave-to {
+.tw-slide-fade-from-up-enter-from,
+.tw-slide-fade-from-up-leave-to {
   transform: translateY(-20px);
   opacity: 0;
 }

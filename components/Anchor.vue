@@ -25,13 +25,13 @@ const to = toRef(props, 'to')
     v-if="to"
     tag="a"
     :to="to"
-    :class="`transition-colors duration-300 dark:hover:text-white hover:text-gray-900 hover:underline`"
+    :class="`tw-transition-colors tw-duration-300 dark:tw-hover:text-white tw-hover:text-gray-900 tw-hover:underline`"
   >
     <slot>{{ text }}</slot>
   </NuxtLink>
   <a
     v-else
-    :class="`transition-colors duration-300 dark:hover:text-white hover:text-gray-900 hover:underline`"
+    :class="`tw-transition-colors tw-duration-300 dark:tw-hover:text-white tw-hover:text-gray-900 tw-hover:underline`"
     :href="href"
   >
     <slot>{{ text }}</slot>

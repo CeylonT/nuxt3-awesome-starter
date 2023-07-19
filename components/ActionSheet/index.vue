@@ -26,19 +26,19 @@ onMounted(() => {
         <ActionSheetOverlay @click="close" />
         <TransitionChild
           as="template"
-          enter="duration-300 ease-out"
-          enter-from="opacity-0"
-          enter-to="opacity-100"
-          leave="duration-300 ease-in"
-          leave-from="opacity-100"
-          leave-to="opacity-0"
+          tw-enter="tw-duration-300 tw-ease-out"
+          tw-enter-from="tw-opacity-0"
+          tw-enter-to="tw-opacity-100"
+          tw-leave="tw-duration-300 tw-ease-in"
+          tw-leave-from="tw-opacity-100"
+          tw-leave-to="tw-opacity-0"
         >
           <div
-            class="fixed bottom-0 w-screen z-50 flex"
+            class="tw-fixed tw-bottom-0 tw-w-screen tw-z-50 tw-flex"
             style="max-height: 66.666667%"
           >
             <div
-              class="relative max-w-8xl px-4 pb-4 w-full mx-auto flex flex-col flex-1 space-y-1 overflow-y-auto justify-end"
+              class="tw-relative tw-max-w-8xl tw-px-4 tw-pb-4 tw-w-full tw-mx-auto tw-flex tw-flex-col tw-flex-1 tw-space-y-1 tw-overflow-y-auto tw-justify-end"
             >
               <slot />
             </div>

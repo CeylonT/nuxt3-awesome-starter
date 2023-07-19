@@ -25,18 +25,18 @@ const slots = useSlots()
 const paddingStyles = reactive<{
   [key: string]: string
 }>({
-  xs: 'px-1 py-0.5',
-  sm: 'px-2 py-1.5',
-  md: 'px-4 py-2',
-  lg: 'px-5 py-3',
+  xs: 'tw-px-1 tw-py-0.5',
+  sm: 'tw-px-2 tw-py-1.5',
+  md: 'tw-px-4 tw-py-2',
+  lg: 'tw-px-5 tw-py-3',
 })
 const fontSizeStyles = reactive<{
   [key: string]: string
 }>({
-  xs: 'text-xs',
-  sm: 'text-sm',
-  md: 'text-base',
-  lg: 'text-lg',
+  xs: 'tw-text-xs',
+  sm: 'tw-text-sm',
+  md: 'tw-text-base',
+  lg: 'tw-text-lg',
 })
 
 // states
@@ -48,10 +48,10 @@ const havePreEl = computed(
 )
 const haveSuEl = computed(() => typeof slots.suffix !== 'undefined')
 const selectedBorderStyle = computed(
-  () => 'border-gray-900/10 dark:border-gray-50/[0.2]'
+  () => 'tw-border-gray-900/10 dark:tw-border-gray-50/[0.2]'
 )
 const selectedOnHoverBorderStyle = computed(
-  () => 'dark:focus:border-white focus:border-gray-900'
+  () => 'dark:tw-focus:border-white tw-focus:border-gray-900'
 )
 const selectedPaddingStyle = computed(
   () => paddingStyles[props.size] || paddingStyles.md
@@ -62,26 +62,26 @@ const selectedFontSizeStyle = computed(
 </script>
 
 <template>
-  <div :class="`text-input-container relative flex`">
+  <div :class="`tw-text-input-container tw-relative tw-flex`">
     <div
       v-if="slots['prefix-disabled']"
-      :class="`flex rounded-l bg-gray-100 dark:bg-slate-800 text-gray-500 border ${selectedBorderStyle}`"
+      :class="`tw-flex tw-rounded-l tw-bg-gray-100 dark:tw-bg-slate-800 tw-text-gray-500 tw-border ${selectedBorderStyle}`"
     >
       <slot name="prefix-disabled" />
     </div>
     <div
       v-if="slots.prefix"
-      :class="`flex rounded-l border ${selectedBorderStyle}`"
+      :class="`tw-flex tw-rounded-l tw-border ${selectedBorderStyle}`"
     >
       <slot name="prefix" />
     </div>
-    <div class="text-input-wrapper relative flex flex-1">
+    <div class="tw-text-input-wrapper tw-relative tw-flex tw-flex-1">
       <input
         v-model="modelValue"
-        :class="`text-input w-full flex-1 bg-transparent outline-none border ${
-          havePreEl ? '' : 'rounded-l'
+        :class="`tw-text-input tw-w-full tw-flex-1 tw-bg-transparent tw-outline-none tw-border ${
+          havePreEl ? '' : 'tw-rounded-l'
         } ${
-          haveSuEl ? '' : 'rounded-r'
+          haveSuEl ? '' : 'tw-rounded-r'
         } ${selectedBorderStyle} ${selectedOnHoverBorderStyle} ${selectedPaddingStyle} ${selectedFontSizeStyle}`"
         :type="type"
         :placeholder="placeholder"
@@ -89,7 +89,7 @@ const selectedFontSizeStyle = computed(
     </div>
     <div
       v-if="slots.suffix"
-      :class="`flex rounded-r border ${selectedBorderStyle}`"
+      :class="`tw-flex tw-rounded-r tw-border ${selectedBorderStyle}`"
     >
       <slot name="suffix" />
     </div>

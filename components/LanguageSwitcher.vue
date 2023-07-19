@@ -22,44 +22,44 @@ const localeSetting = useState<string>('locale.setting')
 </script>
 
 <template>
-  <div class="flex items-center">
+  <div class="tw-flex tw-items-center">
     <Listbox
       v-if="currentStyle === 'dropdown-right-top'"
       v-model="localeSetting"
       as="div"
-      class="relative flex items-center"
+      class="tw-relative tw-flex tw-items-center"
     >
-      <ListboxLabel class="sr-only">Theme</ListboxLabel>
+      <ListboxLabel class="tw-sr-only">Theme</ListboxLabel>
       <ListboxButton
         type="button"
         title="Change Language"
-        class="transition-colors duration-300"
+        class="tw-transition-colors tw-duration-300"
       >
-        <span class="justify-center items-center flex">
+        <span class="tw-justify-center tw-items-center tw-flex">
           <IconLa:language />
         </span>
       </ListboxButton>
       <ListboxOptions
-        class="p-1 absolute z-50 top-full right-0 outline-none bg-white rounded-lg ring-1 ring-gray-900/10 shadow-lg overflow-hidden w-36 py-1 text-sm text-gray-700 font-semibold dark:bg-gray-800 dark:ring-0 dark:highlight-white/5 dark:text-gray-300"
+        class="tw-p-1 tw-absolute tw-z-50 tw-top-full tw-right-0 tw-outline-none tw-bg-white tw-rounded-lg tw-ring-1 tw-ring-gray-900/10 tw-shadow-lg tw-overflow-hidden tw-w-36 tw-py-1 tw-text-sm tw-text-gray-700 tw-font-semibold dark:tw-bg-gray-800 dark:tw-ring-0 dark:tw-highlight-white/5 dark:tw-text-gray-300"
       >
         <ListboxOption
           v-for="lang in availableLocales"
           :key="lang.iso"
           :value="lang.iso"
+          class="tw-py-2 tw-px-2 tw-flex tw-items-center tw-cursor-pointer tw-text-sm"
           :class="{
-            'py-2 px-2 flex items-center cursor-pointer': true,
-            'text-sky-500 bg-gray-100 dark:bg-gray-600/30':
+            'tw-text-sky-500 tw-bg-gray-100 dark:tw-bg-gray-600/30':
               localeSetting === lang.iso,
-            'hover:bg-gray-50 dark:hover:bg-gray-700/30':
+            'tw-hover:bg-gray-50 dark:tw-hover:bg-gray-700/30':
               localeSetting !== lang.iso,
           }"
         >
-          <span class="text-sm mr-2">
+          <span class="tw-text-sm tw-mr-2">
             {{ lang.flag }}
           </span>
-          <span class="flex-1 truncate">
+          <span class="tw-flex-1 tw-truncate">
             {{ lang.name }}
-            <span class="text-xs">({{ lang.iso }})</span>
+            <span class="tw-text-xs">({{ lang.iso }})</span>
           </span>
         </ListboxOption>
       </ListboxOptions>
@@ -67,13 +67,13 @@ const localeSetting = useState<string>('locale.setting')
     <select
       v-if="currentStyle === 'select-box'"
       v-model="localeSetting"
-      class="w-full px-2 pr-3 py-1 outline-none rounded border bg-transparent text-gray-700 dark:text-gray-300 border-gray-900/10 dark:border-gray-50/[0.2]"
+      class="tw-w-full tw-px-2 tw-pr-3 tw-py-1 tw-outline-none tw-rounded tw-border tw-bg-transparent tw-text-gray-700 dark:tw-text-gray-300 tw-border-gray-900/10 dark:tw-border-gray-50/[0.2]"
     >
       <option
         v-for="lang in availableLocales"
         :key="lang.iso"
         :value="lang.iso"
-        class="flex items-center space-x-2"
+        class="tw-flex tw-items-center tw-space-x-2"
       >
         {{ lang.flag }} {{ lang.name }} ({{ lang.iso }})
       </option>

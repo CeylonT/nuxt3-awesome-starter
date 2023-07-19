@@ -1,23 +1,23 @@
 <template>
   <BuilderNavbar>
     <template #menu>
-      <div class="relative hidden lg:flex items-center ml-auto">
-        <div class="flex items-center justify-center">
+      <div class="tw-relative tw-hidden tw-lg:flex tw-items-center tw-ml-auto">
+        <div class="tw-flex tw-items-center tw-justify-center">
           <img
-            class="w-6 h-6 rounded-full"
+            class="tw-w-6 tw-h-6 tw-rounded-full"
             src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
             alt="Avatar of Jonathan Reinink"
           />
-          <span class="ml-2 text-sm font-semibold">Alfian</span>
+          <span class="tw-ml-2 tw-text-sm tw-font-semibold">Alfian</span>
           <IconUil:angle-down />
         </div>
         <div
-          class="flex space-x-4 border-l ml-6 pl-6 border-gray-900/10 dark:border-gray-50/[0.2]"
+          class="tw-flex tw-space-x-4 tw-border-l tw-ml-6 tw-pl-6 tw-border-gray-900/10 dark:tw-border-gray-50/[0.2]"
         >
           <LanguageSwitcher />
           <ThemeSwitcher />
           <Anchor
-            class="hover:no-underline hover:text-slate-900 hover:dark:text-white text-lg flex self-center items-center"
+            class="tw-hover:no-underline tw-hover:text-slate-900 tw-hover:dark:text-white tw-text-lg tw-flex tw-self-center tw-items-center"
             href="https://github.com/viandwi24/nuxt3-awesome-starter"
             title="Github"
           >
@@ -30,16 +30,16 @@
       <ActionSheet @on-close="toggleOptions(false)">
         <ActionSheetBody>
           <ActionSheetHeader text="Menu" />
-          <div class="mt-6 text-sm font-bold capitalize">
+          <div class="tw-mt-6 tw-text-sm tw-font-bold tw-capitalize">
             {{ $t('components.theme_switcher.change_theme') }}
           </div>
-          <div class="mt-2">
+          <div class="tw-mt-2">
             <ThemeSwitcher type="select-box" />
           </div>
-          <div class="mt-6 text-sm font-bold capitalize">
+          <div class="tw-mt-6 tw-text-sm tw-font-bold tw-capitalize">
             {{ $t('components.language_switcher.change_language') }}
           </div>
-          <div class="mt-2">
+          <div class="tw-mt-2">
             <LanguageSwitcher type="select-box" />
           </div>
         </ActionSheetBody>
@@ -49,7 +49,7 @@
           href="https://github.com/viandwi24/nuxt3-awesome-starter"
         >
           <IconMdi:github-face />
-          <span class="ml-1">Github</span>
+          <span class="tw-ml-1">Github</span>
         </Button>
         <Button
           text="Close"

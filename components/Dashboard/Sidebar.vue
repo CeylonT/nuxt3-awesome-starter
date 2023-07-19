@@ -1,4 +1,6 @@
 <script lang="ts">
+import { defineComponent, ref, onMounted } from 'vue'
+
 export default defineComponent({
   props: {
     mode: {
@@ -25,33 +27,36 @@ export default defineComponent({
   <div
     ref="sidebar"
     :class="{
-      'fixed top-0 hidden pt-12 lg:flex lg:w-60 xl:w-80 h-screen':
+      'tw-fixed tw-top-0 tw-hidden tw-pt-12 tw-lg:flex tw-lg:w-60 tw-xl:w-80 tw-h-screen':
         mode === 'normal',
-      'relative flex-1 flex flex-col w-full': mode === 'mobile',
+      'tw-relative tw-flex-1 tw-flex tw-flex-col tw-w-full': mode === 'mobile',
     }"
   >
-    <div class="flex-1 overflow-y-auto pl-4 lg:pl-0 pr-4 py-4">
+    <div
+      class="tw-flex-1 tw-overflow-y-auto tw-pl-4 tw-lg:pl-0 tw-pr-4 tw-py-4"
+    >
       <ul>
         <li v-for="i in 29" :key="i">
           <Anchor
             :to="{ name: 'dashboard' }"
-            class="group flex items-center mb-4 hover:no-underline"
+            class="tw-group tw-flex tw-items-center tw-mb-4 tw-hover:no-underline"
           >
             <div
-              class="flex items-center mr-4 px-2 py-2 rounded-md ring-1 ring-slate-900/5 shadow-sm group-hover:shadow group-hover:ring-slate-900/10 dark:ring-0 dark:shadow-none dark:group-hover:shadow-none dark:group-hover:highlight-white/10 group-hover:shadow-sky-200 dark:highlight-white/10"
+              class="tw-flex tw-items-center tw-mr-4 tw-px-2 tw-py-2 tw-rounded-md tw-ring-1 tw-ring-slate-900/5 tw-shadow-sm tw-group-hover:tw-shadow tw-group-hover:tw-ring-slate-900/10 dark:tw-tw-ring-0 dark:tw-tw-shadow-none dark:tw-tw-group-hover:tw-shadow-none dark:tw-tw-group-hover:tw-highlight-white/10 tw-group-hover:tw-shadow-sky-200 dark:tw-tw-highlight-white/10"
               :class="{
-                'text-white dark:text-white group-hover:bg-sky-500 bg-sky-500':
+                'tw-text-white dark:tw-text-white tw-group-hover:bg-sky-500 tw-bg-sky-500':
                   i === 1,
-                'text-slate-500 dark:text-gray-100 group-hover:bg-gray-200 bg-gray-100 dark:group-hover:bg-slate-600 dark:bg-slate-700':
+                'tw-text-slate-500 dark:tw-text-gray-100 tw-group-hover:bg-gray-200 tw-bg-gray-100 dark:tw-tw-group-hover:bg-slate-600 dark:tw-bg-slate-700':
                   i !== 1,
               }"
             >
-              <IconUil:apps class="text-xs" />
+              <IconUil:apps class="tw-text-xs" />
             </div>
             <span
-              class="text-sm font-semibold capitalize"
+              class="tw-text-sm tw-font-semibold tw-capitalize"
               :class="{
-                'font-extrabold text-sky-500 dark:text-sky-400': i === 1,
+                'tw-font-extrabold tw-text-sky-500 dark:tw-text-sky-400':
+                  i === 1,
               }"
             >
               {{ $t('pages.dashboard.index.nav') }}

@@ -13,7 +13,10 @@ const activeTab = inject<string>('activeTab')
 </script>
 
 <template>
-  <div v-show="activeTab === name" class="relative overflow-auto px-6 py-2">
+  <div
+    v-show="activeTab === name"
+    class="tw-relative tw-overflow-auto tw-px-6 tw-py-2"
+  >
     <slot />
   </div>
 </template>

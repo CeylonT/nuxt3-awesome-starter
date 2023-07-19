@@ -47,23 +47,23 @@ const copyBash = () => {
 </script>
 
 <template>
-  <PageWrapper class="flex-1 flex">
-    <div class="background-overlay">
+  <PageWrapper class="tw-flex-1 tw-flex">
+    <div class="tw-background-overlay">
       <div
-        class="absolute top-0 left-0 transform translate-x-64 translate-y-4 h-14 w-14 rounded-full bg-gray-900 dark:bg-white"
+        class="tw-absolute tw-top-0 tw-left-0 tw-transform tw-translate-x-64 tw-translate-y-4 tw-h-14 tw-w-14 tw-rounded-full tw-bg-gray-900 dark:tw-bg-white"
       ></div>
       <div
-        class="absolute hidden md:block top-0 left-0 transform translate-x-18 translate-y-20 h-28 w-28 rounded-full bg-blue-600 linear-wipe"
+        class="tw-absolute tw-hidden md:tw-block tw-top-0 tw-left-0 tw-transform tw-translate-x-18 tw-translate-y-20 tw-h-28 tw-w-28 tw-rounded-full tw-bg-blue-600 tw-linear-wipe"
       ></div>
       <div
-        class="absolute hidden md:block bottom-0 right-0 transform -translate-x-4 -translate-y-40 h-16 w-16 rounded bg-purple-600 linear-wipe"
+        class="tw-absolute tw-hidden md:tw-block tw-bottom-0 tw-right-0 tw-transform tw--translate-x-4 tw--translate-y-40 tw-h-16 tw-w-16 tw-rounded tw-bg-purple-600 tw-linear-wipe"
       ></div>
-      <div class="absolute bottom-0 right-0 triangle-shape"></div>
+      <div class="tw-absolute tw-bottom-0 tw-right-0 tw-triangle-shape"></div>
     </div>
-    <PageBody class="flex-1 flex">
-      <PageSection class="flex-1 flex items-center">
-        <div class="flex-1 md:w-5/8 flex flex-col z-10">
-          <h1 class="text-center md:text-left mt-4">
+    <PageBody class="tw-flex-1 tw-flex">
+      <PageSection class="tw-flex-1 tw-flex tw-items-center">
+        <div class="tw-flex-1 md:tw-w-5/8 tw-flex tw-flex-col tw-z-10">
+          <h1 class="tw-text-center md:tw-text-left tw-mt-4">
             <span
               v-for="(item, i) in leadingsText"
               :key="i"
@@ -72,45 +72,51 @@ const copyBash = () => {
               }; --end-color: ${item.endColor}; --animation-name: anim-fg-${
                 i + 1
               }`"
-              class="animated-text-bg drop-shadow-xl text-5xl xl:text-8xl 2xl:text-9xl block font-black uppercase"
+              class="tw-animated-text-bg tw-drop-shadow-xl tw-text-5xl tw-xl:text-8xl tw-2xl:text-9xl tw-block tw-font-black tw-uppercase"
             >
-              <span class="animated-text-fg">{{ item.text }}</span>
+              <span class="tw-animated-text-fg">{{ item.text }}</span>
             </span>
           </h1>
           <div
-            class="flex space-x-4 ml-4 mt-10 justify-center md:justify-start"
+            class="tw-flex tw-space-x-4 tw-ml-4 tw-mt-10 tw-justify-center md:tw-justify-start"
           >
             <Button
               size="lg"
               text="Nuxt 3"
-              class="font-extrabold"
+              class="tw-font-extrabold"
               href="https://v3.nuxtjs.org"
             />
             <Button
               size="lg"
               text="Github"
               type="secondary"
-              class="font-extrabold"
+              class="tw-font-extrabold"
               href="https://github.com/viandwi24/nuxt3-awesome-starter"
             />
           </div>
         </div>
-        <div class="hidden md:flex md:w-3/8 justify-center items-end relative">
-          <Gem class="absolute -top-64 -right-0" />
-          <div class="ml-4 w-100 z-10 h-auto shadow">
+        <div
+          class="tw-hidden md:tw-flex md:tw-w-3/8 tw-justify-center tw-items-end tw-relative"
+        >
+          <Gem class="tw-absolute tw--top-64 tw--right-0" />
+          <div class="tw-ml-4 tw-w-100 tw-z-10 tw-h-auto tw-shadow">
             <div
-              class="win-header bg-gray-200 dark:bg-slate-800 flex flex space-x-4 px-3 py-2 rounded-t-lg relative border-b-2 border-gray-300/75 dark:border-slate-700/75"
+              class="tw-win-header tw-bg-gray-200 dark:tw-bg-slate-800 tw-flex tw-space-x-4 tw-px-3 tw-py-2 tw-rounded-t-lg tw-relative tw-border-b-2 tw-border-gray-300/75 dark:tw-border-slate-700/75"
             >
-              <div class="win-controls flex space-x-1 items-center">
-                <div class="w-3 h-3 bg-red-500 rounded-full" />
-                <div class="w-3 h-3 bg-green-500 rounded-full" />
-                <div class="w-3 h-3 bg-yellow-500 rounded-full" />
+              <div class="tw-flex tw-space-x-1 tw-items-center">
+                <div class="tw-w-3 tw-h-3 tw-bg-red-500 tw-rounded-full" />
+                <div class="tw-w-3 tw-h-3 tw-bg-green-500 tw-rounded-full" />
+                <div class="tw-w-3 tw-h-3 tw-bg-yellow-500 tw-rounded-full" />
               </div>
-              <div class="flex-1 font-bold text-center pr-12 text-sm">BASH</div>
-              <div class="text-sm flex justify-center items-center">
-                <div class="tooltip">
+              <div
+                class="tw-flex-1 tw-font-bold tw-text-center tw-pr-12 tw-text-sm"
+              >
+                BASH
+              </div>
+              <div class="tw-text-sm tw-flex tw-justify-center tw-items-center">
+                <div>
                   <button
-                    class="text-gray-100 flex justify-center items-center"
+                    class="tw-text-gray-100 tw-flex tw-justify-center tw-items-center"
                     @click="copyBash"
                     @mouseout="cancelTooltip"
                   >
@@ -121,7 +127,7 @@ const copyBash = () => {
               </div>
             </div>
             <div
-              class="win-body rounded-b-lg bg-gray-200/90 dark:bg-slate-800/90 px-3 py-2 font-mono backdrop-filter backdrop-blur-lg"
+              class="tw-rounded-b-lg tw-bg-gray-200/90 dark:tw-bg-slate-800/90 tw-px-3 tw-py-2 tw-font-mono tw-backdrop-filter tw-backdrop-blur-lg"
             >
               <div>
                 $ git clone https://github.com/viandwi24/nuxt3-awesome-starter

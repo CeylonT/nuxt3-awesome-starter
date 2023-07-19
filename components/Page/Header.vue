@@ -5,7 +5,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="lg:px-8 px-4 mb-6">
+  <div class="lg:tw-px-8 tw-px-4 tw-mb-6">
     <slot />
   </div>
 </template>

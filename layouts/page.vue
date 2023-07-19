@@ -2,13 +2,13 @@
   <div>
     <slot name="app-before" />
     <div id="app-before"></div>
-    <div class="flex flex-col min-h-screen">
+    <div class="tw-flex tw-flex-col tw-min-h-screen">
       <slot name="header">
         <PageNavbar />
       </slot>
-      <div class="flex-1 w-full flex flex-col">
+      <div class="tw-flex-1 tw-w-full tw-flex tw-flex-col">
         <div
-          class="relative flex-1 flex flex-col mx-auto max-w-8xl w-full h-full"
+          class="tw-relative tw-flex-1 tw-flex tw-flex-col tw-mx-auto tw-max-w-8xl tw-w-full tw-h-full"
         >
           <slot />
         </div>

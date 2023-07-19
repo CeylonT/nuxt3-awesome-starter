@@ -18,7 +18,7 @@ const { data } = await useAsyncData(props.path, () =>
 <template>
   <PageWrapper>
     <PageHeader>
-      <PageTitle :text="pageTitle" class="capitalize" />
+      <PageTitle :text="pageTitle" class="tw-capitalize" />
     </PageHeader>
     <PageBody>
       <PageSection>
