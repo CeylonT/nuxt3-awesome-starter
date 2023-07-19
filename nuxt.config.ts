@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     '~/assets/sass/vendor.scss',
     '~/assets/sass/app.scss',
     'vuetify/lib/styles/main.sass',
+    '@fortawesome/fontawesome-svg-core/styles.css',
   ],
 
   // plugins
@@ -32,7 +33,12 @@ export default defineNuxtConfig({
 
   // build
   build: {
-    transpile: ['vuetify', '@headlessui/vue'],
+    transpile: [
+      'vuetify',
+      '@headlessui/vue',
+      '@vuepic/vue-datepicker',
+      'vue-toastification',
+    ],
   },
 
   // modules
