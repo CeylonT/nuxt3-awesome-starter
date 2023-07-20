@@ -13,6 +13,16 @@ const app = useAppConfig() as AppConfigInput
 const menus = computed((): IMenuItem[] => [
   { type: 'link', text: t('pages.post.nav'), route: { name: 'post' } },
   {
+    type: 'link',
+    text: 'form',
+    route: { name: 'form' },
+  },
+  {
+    type: 'link',
+    text: 'form step',
+    route: { name: 'form-step' },
+  },
+  {
     type: 'button',
     text: t('pages.dashboard.nav'),
     route: { name: 'dashboard' },

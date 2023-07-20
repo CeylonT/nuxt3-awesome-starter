@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { Field, ErrorMessage } from 'vee-validate'
 import * as yup from 'yup'
-// import FormWizard from '~/components/FormWizard.vue'
-// import FormStep from '~/components/FormStep.vue'
+
+definePageMeta({
+  layout: 'page',
+})
 
 // break down the validation steps into multiple schemas
 const validationSchema = [
